@@ -1,6 +1,12 @@
 import { Routes } from '@angular/router';
 import { StartScreenComponent } from './start-screen/start-screen.component';
+import { GameScreenComponent } from './game-screen/game-screen.component';
 
-export const routes: Routes = [{
-    path:'Home', component:StartScreenComponent
-}];
+export const routes: Routes = [
+    {
+        path:'', component:StartScreenComponent
+    },
+    {
+        path:'Game', component:GameScreenComponent
+    }
+];

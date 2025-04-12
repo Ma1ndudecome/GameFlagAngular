@@ -9,13 +9,5 @@ import { Router, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-    router = inject(Router)
-  
-  constructor(){
-    this.changeRouting()
-  }
-
-  changeRouting(){
-    this.router.navigate(['/Home'])
-  }
+   
 }

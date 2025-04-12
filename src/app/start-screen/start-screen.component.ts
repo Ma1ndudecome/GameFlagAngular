@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrl: './start-screen.component.css'
 })
 export class StartScreenComponent {
-
+  router = inject(Router)
+  
+    startGame(){
+      this.router.navigate(['/Game'])
+    }
 }
