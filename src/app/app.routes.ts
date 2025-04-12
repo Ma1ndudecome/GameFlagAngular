@@ -8,5 +8,6 @@ export const routes: Routes = [
     },
     {
         path:'Game', component:GameScreenComponent
-    }
+    },
+    
 ];
