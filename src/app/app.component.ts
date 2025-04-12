@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
 
@@ -9,5 +9,13 @@ import { Router, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- 
+    router = inject(Router)
+  
+  constructor(){
+    this.changeRouting()
+  }
+
+  changeRouting(){
+    this.router.navigate(['/Home'])
+  }
 }
