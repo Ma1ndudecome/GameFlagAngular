@@ -1,0 +1,9 @@
+:root{
+    --brow-black-color:rgba(22,22,22,255);
+    --light-color:white;
+    --gray-light-color:rgba(169,169,169,255)
+}
+html,body{
+    margin: 0;
+    height: 100vh;
+}
