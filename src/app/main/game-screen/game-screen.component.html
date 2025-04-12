@@ -3,19 +3,16 @@
 <div class="container-game">
     <div class="block-game">
         <div class="block-image-county">
-            <img src="https://bluemoji.io/cdn-proxy/646218c67da47160c64a84d5/66b3eba284d9bc814570814d_18.png" alt="country" class="image-country">
+            <img src="{{flagsArr[0].img}}" alt="country" class="image-country">
         </div>
         <div class="container-answer">
-            <label>
-                <input type="radio" name="Country">
-                <strong class="name-country">NameCountry</strong>
-
-            </label>
-            <label>
-                <input type="radio" name="Country">
-                <strong class="name-country">NameCountry</strong>
-            </label>
-            <label>
+            @for(country of flagsArr; track flagsArr){
+                <label>
+                    <input type="radio" name="Country">
+                    <strong class="name-country">{{country.name}}</strong>
+                </label>
+            }
+            <!-- <label>
                 <input type="radio" name="Country">
                 <strong class="name-country">NameCountry</strong>
             </label>
@@ -27,6 +24,10 @@
                 <input type="radio" name="Country">
                 <strong class="name-country">NameCountry</strong>
             </label>
+            <label>
+                <input type="radio" name="Country">
+                <strong class="name-country">NameCountry</strong>
+            </label> -->
         </div>
         <div class="container-button">
             <button class="submitButton">Submit & Next</button>

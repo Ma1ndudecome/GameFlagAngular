@@ -16,43 +16,43 @@ export class GameScreenComponent {
     },
     {
       img:"assets/img/armenia.webp", 
-      name:"Afganistan"
+      name:"Armenia"
     },
     {
       img:"assets/img/Chexia.webp", 
-      name:"Afganistan"
+      name:"Chexia"
     },
     {
       img:"assets/img/Egupit.webp", 
-      name:"Afganistan"
+      name:"Egipyt"
     },
     {
       img:"assets/img/Germany.webp", 
-      name:"Afganistan"
+      name:"Germany"
     },
     {
       img:"assets/img/India.webp", 
-      name:"Afganistan"
+      name:"India"
     },
     {
       img:"assets/img/italy.webp", 
-      name:"Afganistan"
+      name:"italy"
     },
     {
       img:"assets/img/Japan.webp", 
-      name:"Afganistan"
+      name:"Japan"
     },
     {
       img:"assets/img/Poland.webp", 
-      name:"Afganistan"
+      name:"Poland"
     },
     {
       img:"assets/img/potato.webp", 
-      name:"Afganistan"
+      name:"Belarus"
     },
     {
       img:"assets/img/Roman.webp", 
-      name:"Afganistan"
+      name:"Roman"
     },
    ]
 }
