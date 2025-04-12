@@ -28,8 +28,8 @@
 .name-country{
     margin-left: 5px;
 }
-.container-answer label input{
-    background-color: black;
+.container-answer label{
+    width: fit-content;
 }
 .container-button{
     display: flex;
