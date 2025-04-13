@@ -1,0 +1,21 @@
+<div class="block-game">
+    <div class="block-image-county">
+        <img [src]="randomItem.img" alt="country" class="image-country">
+    </div>
+        <div class="container-answer">
+            <div class="container-variable"></div>
+            
+                <label *ngFor="let country of flagsArr.slice(0,3)">
+                    <input type="radio" name="Country" (change)="onCountrySelected(country.name)" [value]="country.name">
+                    <strong class="name-country">{{country.name}}</strong>
+                </label>
+            
+            <label>
+                <input type="radio" name="Country" value="{{randomItem.name}}" (change)="onCountrySelected(randomItem.name)">
+                <strong class="name-country">{{randomItem.name}}</strong>
+            </label>
+        </div>
+            <div class="container-button">
+                <button class="submitButton" (click)="checkValue()">Submit & Next</button>
+            </div>
+</div>
