@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
 import { NavMenuComponent } from '../nav-menu/nav-menu.component';
 import { CountryArr } from '../../interface/CountryArr.interface';
+import { NgFor } from '@angular/common';
+
+
+
 
 @Component({
   selector: 'app-game-screen',
-  imports: [NavMenuComponent],
+  imports: [NavMenuComponent, NgFor],
   templateUrl: './game-screen.component.html',
   styleUrl: './game-screen.component.css'
 })
 export class GameScreenComponent {
-   flagsArr:CountryArr[] = [
+  constructor(){
+    this.removeCorrectAnswer()
+  }
+  countrySelected:string =''
+  flagsArr:CountryArr[] = [
     {
       img:"assets/img/afganistan.webp", 
       name:"Afganistan"
@@ -55,4 +63,20 @@ export class GameScreenComponent {
       name:"Roman"
     },
    ]
+
+   randomItem = this.flagsArr[Math.floor(Math.random()*this.flagsArr.length)]
+  
+   removeCorrectAnswer():void{
+     this.flagsArr = this.flagsArr.filter((el)=>el !== this.randomItem)
+   }
+    
+   onCountrySelected(CountryName:string){
+    this.countrySelected = CountryName
+   }
+
+   checkValue(){
+    console.log(this.countrySelected)
+   }
+   
 }
+
