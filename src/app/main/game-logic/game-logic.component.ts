@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { CountryArr } from '../../interface/CountryArr.interface';
 import { Router } from '@angular/router';
-
+export let score:number = 0
 @Component({
   selector: 'app-game-logic',
   imports: [NgFor],
@@ -16,6 +16,7 @@ export class GameLogicComponent {
   }
   countrySelected:string =''
   router = inject(Router)
+ 
 
   flagsArr:CountryArr[] = [
     {
@@ -75,6 +76,11 @@ export class GameLogicComponent {
    }
 
    checkValue(){
+    if(this.randomItem.name === this.countrySelected){
+      score = score + 5
+      console.log('pluse')
+      console.log(score)
+    }
     this.removeCorrectAnswer()
 
     this.shuffle(this.flagsArr)
