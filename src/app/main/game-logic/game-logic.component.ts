@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { CountryArr } from '../../interface/CountryArr.interface';
 import { Router } from '@angular/router';
-export let score:number = 0
+
 @Component({
   selector: 'app-game-logic',
   imports: [NgFor],
@@ -13,10 +13,15 @@ export class GameLogicComponent {
   constructor(){
     this.shuffle(this.flagsArr)
     this.removeCorrectAnswer()
+    this.pushRandomCountry()
+    this.shuffle(this.arrTake)
+    localStorage.setItem("score", String(this.score))
+    console.log(this.score)
+    
   }
   countrySelected:string =''
   router = inject(Router)
- 
+  score:number = 0
 
   flagsArr:CountryArr[] = [
     {
@@ -64,7 +69,7 @@ export class GameLogicComponent {
       name:"Roman"
     },
    ]
-
+   arrTake:CountryArr[] = []
    randomItem = this.flagsArr[Math.floor(Math.random()*this.flagsArr.length)]
   
    removeCorrectAnswer():void{
@@ -77,15 +82,16 @@ export class GameLogicComponent {
 
    checkValue(){
     if(this.randomItem.name === this.countrySelected){
-      score = score + 5
-      console.log('pluse')
-      console.log(score)
+      this.score += 5
+      localStorage.setItem("score", String(this.score))
     }
     this.removeCorrectAnswer()
 
     this.shuffle(this.flagsArr)
 
     this.changeRandomCountry()
+
+    this.pushRandomCountry()
     
     if(this.flagsArr.length === 3){
       this.router.navigate(['/Game-Over'])
@@ -98,5 +104,12 @@ export class GameLogicComponent {
 
    changeRandomCountry(){
       this.randomItem = this.flagsArr[Math.floor(Math.random()*this.flagsArr.length)]
+   }
+   pushRandomCountry(){
+    this.arrTake = []
+    this.arrTake.push(this.flagsArr[0])
+    this.arrTake.push(this.flagsArr[1])
+    this.arrTake.push(this.flagsArr[2])
+    this.arrTake.push(this.randomItem)
    }
 }

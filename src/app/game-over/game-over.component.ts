@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { score } from '../main/game-logic/game-logic.component';
+
 @Component({
   selector: 'app-game-over',
   imports: [],
@@ -8,7 +8,7 @@ import { score } from '../main/game-logic/game-logic.component';
   styleUrl: './game-over.component.css'
 })
 export class GameOverComponent {
-  public counerFinalScore = score
+  public counerFinalScore = Number(localStorage.getItem("score"))
   
   
   public router = inject(Router);
